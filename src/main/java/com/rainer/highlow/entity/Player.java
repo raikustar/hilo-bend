@@ -22,6 +22,4 @@ public class Player {
     private Long id;
     private String name;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    Score score;
 }

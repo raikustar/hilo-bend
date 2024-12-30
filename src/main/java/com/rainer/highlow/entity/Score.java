@@ -1,13 +1,8 @@
 package com.rainer.highlow.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
 
 import java.time.LocalTime;
 
@@ -21,5 +16,9 @@ public class Score {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int score;
-    private LocalTime currentTimeOfDay;
+    @ColumnDefault("0")
+    private long totalTime;
+
+    @ManyToOne
+    Player player;
 }

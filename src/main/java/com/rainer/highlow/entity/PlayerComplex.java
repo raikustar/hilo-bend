@@ -21,6 +21,6 @@ public class PlayerComplex {
     private Long id;
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     List<Score> score;
 }
